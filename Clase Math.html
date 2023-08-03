@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <script>
+        let selec = parseInt(prompt('Ingrese un valor entre 1 y 10'));
+        let num = parseInt(Math.random() * 10) + 1;
+        if (num == selec)
+            document.write('Ganó el número que se sorteó es el ' + num);
+        else
+            document.write('Lo siento, el número que se sorteó es el ' + num + ' y usted eligió el ' + selec);
+        let numeroIngresado = parseInt(prompt('Ingrese un número para elevarlo a la tercera potencia'));
+        let resultadoPotencia = Math.pow(numeroIngresado, 3);
+        document.write('<br>El número ' + numeroIngresado + ' elevado a la tercera potencia es: ' + resultadoPotencia);
+        let valorIngresado = parseFloat(prompt('Ingrese un valor para calcular su raíz cuadrada'));
+        let raizCuadrada = Math.sqrt(valorIngresado);
+        document.write('<br>La raíz cuadrada del valor ingresado es: ' + raizCuadrada);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <script>
+        // Problema 1 y 2: Ingresar nombres hasta que se ingrese "Fin" (mayúsculas o minúsculas)
+        let nombres = [];
+        let nombre;
+        while (true) {
+            nombre = prompt('Ingrese un nombre (o "Fin" para terminar):');
+            if (nombre.toLowerCase() === "fin") {
+                break;
+            }
+            nombres.push(nombre);
+        }
+        document.write('Cantidad de nombres ingresados: ' + nombres.length);
+        document.write('<br>');
+
+        // Problema 3: Búsqueda de una clave en una frase o texto
+        let fuente = prompt('Ingrese una frase o texto:');
+        let clave = prompt('Ingrese la clave a buscar:');
+        let posicion = fuente.indexOf(clave);
+        if (posicion !== -1) {
+            document.write('Se encontró la clave en la posición ' + posicion);
+        } else {
+            document.write('La clave no se encuentra en la frase o texto.');
+        }
+        document.write('<br>');
+
+        // Problema 4: Determinar si una palabra o texto es un palíndromo
+        let palabra = prompt('Ingrese una palabra o texto:');
+        let palabraReversa = palabra.split('').reverse().join('');
+        if (palabra === palabraReversa) {
+            document.write('La palabra o texto ingresado es un palíndromo.');
+        } else {
+            document.write('La palabra o texto ingresado NO es un palíndromo.');
+        }
+        document.write('<br>');
+
+        // Problema 5: Verificar si una dirección de email tiene el carácter @
+        let direccionEmail = prompt('Ingrese una dirección de email:');
+        if (direccionEmail.includes('@')) {
+            document.write('La dirección de email contiene el carácter @.');
+        } else {
+            document.write('La dirección de email NO contiene el carácter @.');
+        }
+        document.write('<br>');
+
+        // Problema 6:
+        let cadena = prompt('Ingrese una cadena:');
+        document.write('Primera mitad de los caracteres: ' + cadena.substring(0, Math.ceil(cadena.length / 2)));
+        document.write('<br>');
+        document.write('Último carácter: ' + cadena.charAt(cadena.length - 1));
+        document.write('<br>');
+        document.write('Cadena en forma inversa: ' + cadena.split('').reverse().join(''));
+        document.write('<br>');
+        document.write('Cada carácter separado por guión: ' + cadena.split('').join('-'));
+        document.write('<br>');
+        
+        let vocales = cadena.match(/[aeiouáéíóú]/gi);
+        document.write('Cantidad de vocales: ' + (vocales ? vocales.length : 0));
+        document.write('<br>');
+
+        // Separar cada palabra ingresada en una línea distinta
+        let palabras = cadena.split(' ');
+        for (let i = 0; i < palabras.length; i++) {
+            document.write(palabras[i]);
+            document.write('<br>');
+        }
+    </script>
+
+</body>
+
+</html>

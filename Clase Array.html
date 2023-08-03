@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <script>
+        function cargar(sueldos) {
+            for (let f = 0; f < sueldos.length; f++) {
+                let v = prompt('Ingrese sueldo:');
+                sueldos[f] = parseInt(v);
+            }
+        }
+        function calcularGastos(sueldos) {
+            let total = 0;
+            let mayores36 = 0;
+            let mayores50 = 0;
+            
+            for (let f = 0; f < sueldos.length; f++) {
+                total = total + sueldos[f];
+                if (sueldos[f] > 36) {
+                    mayores36 = mayores36 + sueldos[f];
+                }
+                if (sueldos[f] > 50) {
+                    mayores50++;
+                }
+            }
+            document.write('Listado de sueldos<br>');
+            for (let f = 0; f < sueldos.length; f++) {
+                document.write(sueldos[f] + '<br>');
+            }
+            document.write('Total de gastos en sueldos: ' + total + '<br>');
+            document.write('Total de gastos en sueldos mayores a 36: ' + mayores36 + '<br>');
+            document.write('Cantidad de sueldos mayores a 50: ' + mayores50);
+        }
+        function calcularInformacionVector(vector) {
+            let total = 0;
+            let mayores36 = 0;
+            let mayores50 = 0;
+            
+            for (let f = 0; f < vector.length; f++) {
+                total = total + vector[f];
+                if (vector[f] > 36) {
+                    mayores36 = mayores36 + vector[f];
+                }
+                if (vector[f] > 50) {
+                    mayores50++;
+                }
+            }
+            document.write('Listado de elementos del vector<br>');
+            for (let f = 0; f < vector.length; f++) {
+                document.write(vector[f] + '<br>');
+            }
+            document.write('Total acumulado de elementos del vector: ' + total + '<br>');
+            document.write('Total acumulado de elementos mayores a 36: ' + mayores36 + '<br>');
+            document.write('Cantidad de elementos mayores a 50: ' + mayores50);
+        }
+
+        function sumarVectores(vector1, vector2) {
+            let sumaVector = [];
+            for (let f = 0; f < vector1.length; f++) {
+                sumaVector.push(vector1[f] + vector2[f]);
+            }
+            return sumaVector;
+        }
+        let sueldos;
+        sueldos = new Array(8);
+        cargar(sueldos);
+        calcularInformacionVector(sueldos);
+        let vector1 = [2, 4, 6, 8];
+        let vector2 = [1, 3, 5, 7];
+        let sumaVector = sumarVectores(vector1, vector2);
+        document.write('<br>Resultado de la suma de los vectores: ' + sumaVector);
+    </script>
+
+</body>
+
+</html>

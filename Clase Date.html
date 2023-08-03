@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejemplo de JavaScript</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <script>
+        function mostrarFechaHora() {
+            let fecha = new Date();
+            document.write('Hoy es ');
+            document.write(getDiaSemanaTexto(fecha) + ' ');
+            document.write(fecha.getDate() + ' de ');
+            document.write(getMesTexto(fecha.getMonth()) + ' de ');
+            document.write(fecha.getFullYear());
+            document.write('<br>');
+            document.write('Es la hora ');
+            document.write(fecha.getHours() + ':');
+            document.write(fecha.getMinutes() + ':');
+            document.write(fecha.getSeconds());
+        }
+        function getDiaSemanaTexto(fecha) {
+            const diasSemana = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+            return diasSemana[fecha.getDay()];
+        }
+        function getMesTexto(mes) {
+            const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+            return meses[mes];
+        }
+        function obtenerCuatrimestre(fecha) {
+            const mes = fecha.getMonth() + 1;
+            return Math.ceil(mes / 4); 
+        }
+        mostrarFechaHora();
+        const cuatrimestreActual = obtenerCuatrimestre(new Date());
+        document.write('<br>Estamos en el cuatrimestre: ' + cuatrimestreActual);
+    </script>
+
+</body>
+
+</html>
